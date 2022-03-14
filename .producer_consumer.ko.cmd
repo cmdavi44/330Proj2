@@ -1,0 +1,1 @@
+cmd_/home/kerneldev/Documents/330proj2/producer_consumer.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/kerneldev/Documents/330proj2/producer_consumer.ko /home/kerneldev/Documents/330proj2/producer_consumer.o /home/kerneldev/Documents/330proj2/producer_consumer.mod.o;  true
