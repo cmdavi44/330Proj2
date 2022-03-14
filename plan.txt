@@ -1,0 +1,21 @@
+producer
+	- searches the system for all the processes that belong to a given user and adds the
+	processes information to the shared buffer
+consumer 
+	- removes the processes from the buffer,
+	collects the elapsed time of these processes, and outputs the total 
+	elapsed time in the kernel log.
+
+There is only one producer, but can be multiple consumers
+
+- sema_init() to initialize the semaphore
+- To signal a semaphore, you will use
+down_interruptible()
+- To wait on a semaphore , you will use up().
+
+shared buffer is an array, we will need to store the process id (including
+the index of this in the array) in this buffer and need some way of keeping 
+count of how many items have been produced.
+	- next in used to keep track of where to write next data item
+	- next_out used to keep track of where to read from next
+
