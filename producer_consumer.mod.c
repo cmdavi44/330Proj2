@@ -30,7 +30,8 @@ __used __section("__versions") = {
 	{ 0x27ce139e, "module_layout" },
 	{ 0x9862696, "param_ops_int" },
 	{ 0x86ba6193, "param_ops_charp" },
-	{ 0x4b249969, "init_task" },
+	{ 0xcbb89447, "wake_up_process" },
+	{ 0xde189e17, "kthread_create_on_node" },
 	{ 0x92997ed8, "_printk" },
 	{ 0xbdfb6dbb, "__fentry__" },
 };
@@ -38,4 +39,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "294B9D1B70BDD51B9816276");
+MODULE_INFO(srcversion, "095318F3D622D5794EA7D26");
