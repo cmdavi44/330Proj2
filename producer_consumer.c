@@ -5,9 +5,11 @@
 #include <linux/moduleparam.h>
 #include <linux/kthread.h>
 #include <linux/semaphore.h>
+#include <stdlib.h>
 
 #include "producer.h"
 #include "consumer.h"
+#include "producer_consumer.h"
 
 
 #define AUTHOR "Vivekananda Holla"
@@ -20,28 +22,26 @@ static int uid = 0;
 module_param(uid, int, 0644);
 MODULE_PARM_DESC(uid, "user id");
 
-static int buff_size = 10; // This will change
+int buff_size = 10; // This will change
 module_param(buff_size, int, 0644);
-MODULE_PARM_DESC(p, "size of buffer");
+MODULE_PARM_DESC(buff_size, "size of buffer");
 
-static int p = 0;
+int p = 0;
 module_param(p, int, 0644);
 MODULE_PARM_DESC(p, "number of producers");
 
-static int c = 0;
+int c = 0;
 module_param(c, int, 0644);
 MODULE_PARM_DESC(c, "number of consumers");
 
 
 
-// Buffer
-struct bufferItem {
-    int itemNumber;
-    int pid;
-    int buffIndex;
-    int start_time;
-};
-struct bufferItem buffer[buff_size];
+// struct bufferItem buffer[buff_size];    
+
+struct bufferList *buffer = malloc(sizeof *buffer);
+buffer->size = buff_size;
+buffer->itemCount = 0;
+
 
 // Semaphores
 struct semaphore mutex;
