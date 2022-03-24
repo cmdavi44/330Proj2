@@ -198,4 +198,7 @@ producer_consumer.o: \
  include/linux/posix-timers.h include/linux/alarmtimer.h \
  include/linux/task_work.h include/uapi/linux/rseq.h \
  include/linux/kcsan.h arch/x86/include/generated/asm/kmap_size.h \
- include/asm-generic/kmap_size.h
+ include/asm-generic/kmap_size.h include/linux/semaphore.h \
+ /home/kerneldev/Documents/330proj2/producer.h \
+ /home/kerneldev/Documents/330proj2/consumer.h \
+ /home/kerneldev/Documents/330proj2/producer_consumer.h
